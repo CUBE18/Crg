@@ -3,33 +3,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRG Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
-      html, body {
+      * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        background: #000;
+      }
+      body {
+        font-family: 'Outfit', sans-serif;
+        background: #0a0a0a;
         color: #fff;
-        font-family: sans-serif;
+        scroll-behavior: smooth;
       }
       nav {
         position: fixed;
-        top: 0;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2rem;
+        background: rgba(10, 10, 10, 0.8);
         backdrop-filter: blur(10px);
         z-index: 1000;
+        border-bottom: 1px solid #1a1a1a;
+      }
+      nav .logo {
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
       }
       nav a {
-        color: white;
-        margin-left: 1rem;
+        color: #ccc;
         text-decoration: none;
+        margin-left: 1.5rem;
+        font-weight: 300;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: #fff;
       }
       section {
-        padding: 100px 2rem;
-        max-width: 1000px;
+        padding: 6rem 2rem;
+        max-width: 960px;
         margin: auto;
       }
       .hero {
@@ -39,31 +56,84 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        padding-top: 4rem;
       }
       .hero h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+        font-weight: 700;
         margin-bottom: 1rem;
       }
-      .hero p {
+      .hero p, .hero span {
+        font-size: 1.2rem;
+        color: #aaa;
         max-width: 600px;
-        color: #bbb;
+      }
+      h2 {
+        font-size: 2.25rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid #222;
+        display: inline-block;
+        padding-bottom: 0.3rem;
       }
       .card {
-        border: 1px solid #333;
+        background: #111;
+        padding: 1.5rem;
         border-radius: 1rem;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: 1px solid #222;
+      }
+      .card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      }
+      .card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .card p {
+        color: #bbb;
+        font-weight: 300;
+        line-height: 1.6;
+      }
+      .contact-link {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.75rem 1.5rem;
+        background: #fff;
+        color: #000;
+        font-weight: 500;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .contact-link:hover {
+        background: #ddd;
       }
       footer {
         text-align: center;
-        padding: 2rem;
+        padding: 3rem 1rem;
         color: #666;
+        font-size: 0.9rem;
+      }
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 2.25rem;
+        }
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        nav a {
+          margin: 0.5rem 0 0 0;
+        }
       }
     </style>
   </head>
   <body>
     <nav>
-      <div>CRG</div>
+      <div class="logo">CRG</div>
       <div>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -72,12 +142,12 @@
       </div>
     </nav><section class="hero">
   <h1>Hey, I'm Charan</h1>
-  <p>A Data Engineer crafting clean pipelines, scalable solutions & impactful data stories.</p>
+  <span id="typed-text"></span>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I'm Charan, a passionate Data Engineer with experience building reliable big data architectures using Azure, Databricks, and Spark. I transform raw data into meaningful insights.</p>
+  <p>I'm Charan, a passionate Data Engineer with expertise in Azure, Databricks, and Spark. I specialize in building scalable data architectures and turning raw data into business gold.</p>
 </section>
 
 <section id="skills">
@@ -93,14 +163,14 @@
   </div>
   <div class="card">
     <h3>Real-Time Streaming Pipeline</h3>
-    <p>Built with Kafka + Spark Streaming to process 5M+ events daily with 99.9% delivery.</p>
+    <p>Built a real-time Kafka + Spark Streaming pipeline to process over 5M events daily with 99.9% delivery.</p>
   </div>
 </section>
 
 <section id="contact">
   <h2>Let's Connect</h2>
-  <p>Open to freelance, collaborations, and full-time roles. Reach out!</p>
-  <p><a href="mailto:charan@example.com" style="color: #fff; text-decoration: underline;">charan@example.com</a></p>
+  <p>Open to freelance, collaborations, and full-time roles. Reach out and let's build something impactful!</p>
+  <a class="contact-link" href="mailto:ncharan018@gmail.com">Say Hello</a>
 </section>
 
 <footer>
@@ -109,6 +179,20 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  new Typed("#typed-text", {
+    strings: [
+      "Data Engineer.",
+      "Big Data Specialist.",
+      "Azure + Spark Developer.",
+      "Making sense of data — every day."
+    ],
+    typeSpeed: 60,
+    backSpeed: 40,
+    backDelay: 1500,
+    startDelay: 500,
+    loop: true
+  });
 </script>
 
   </body>
