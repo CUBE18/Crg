@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRG Portfolio</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: #fff;
+        font-family: sans-serif;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+      }
+      nav a {
+        color: white;
+        margin-left: 1rem;
+        text-decoration: none;
+      }
+      section {
+        padding: 100px 2rem;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero p {
+        max-width: 600px;
+        color: #bbb;
+      }
+      .card {
+        border: 1px solid #333;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div>CRG</div>
+      <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav><section class="hero">
+  <h1>Hey, I'm Charan</h1>
+  <p>A Data Engineer crafting clean pipelines, scalable solutions & impactful data stories.</p>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I'm Charan, a passionate Data Engineer with experience building reliable big data architectures using Azure, Databricks, and Spark. I transform raw data into meaningful insights.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <p>Azure Databricks, Data Factory (ADF), Spark, PySpark, SQL, Data Modeling, Delta Lake, CI/CD, Power BI</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <h3>Fast Start Allocation Dashboard</h3>
+    <p>Refactored legacy systems into efficient PGT format using Spark SQL & ADF.</p>
+  </div>
+  <div class="card">
+    <h3>Real-Time Streaming Pipeline</h3>
+    <p>Built with Kafka + Spark Streaming to process 5M+ events daily with 99.9% delivery.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <p>Open to freelance, collaborations, and full-time roles. Reach out!</p>
+  <p><a href="mailto:charan@example.com" style="color: #fff; text-decoration: underline;">charan@example.com</a></p>
+</section>
+
+<footer>
+  © <span id="year"></span> Charan | Built with love
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+  </body>
+</html>
